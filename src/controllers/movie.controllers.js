@@ -7,7 +7,9 @@ exports.createMovie = (req,res) => {
       user: req.body.user,
       token: req.headers.authorization
     };
-    res.status(200).send(movie);
+    res
+      .status(200)
+      .send({movie:movie, message: 'Movie succesfully created'});
   }
   catch (error)
   {
